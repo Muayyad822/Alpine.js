@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine Basics</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div x-data="counter" >
+        <h1>Hi, <span x-text="name"></span></h1>
+        <p>The current count is: <span x-text="count"></span></p>
+        <button x-on:click ='count++'>Increase count</button>
+        <button x-on:click ='logCount'>Log count</button>
+        <button x-on:click ='count = 0'>Reset count</button>
+    </div>
+</body>
+</html>
