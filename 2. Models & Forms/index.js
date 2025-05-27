@@ -5,6 +5,11 @@ document.addEventListener('alpine:init', () => {
         passwordConfirm: '',
         belt:'',
         bio:'',
-        newsletter: true
+        newsletter: true,
+        showPassword: false,
+        showConfirmPassword: false,
+        submitForm(){
+            console.log(this.username, this.password, this.belt, this.bio, this.newsletter);
+        }
     }))
 })

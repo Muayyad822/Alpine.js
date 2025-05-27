@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form x-data="signupForm">
-      <h1>Ninja SIgnup Form</h1>
+    <form x-data="signupForm" @submit.prevent="submitForm">
+      <h1>Ninja Signup Form</h1>
 
       <!-- username -->
       <div class="form-field">
@@ -30,16 +30,31 @@
       <div class="form-field password">
         <label>
           <span>Password:</span>
-          <input type="password" x-model="password" />
+          <input
+            :type="showPassword ? 'text' : 'password'"
+            x-model="password"
+          />
         </label>
+        <button type="button" @click="showPassword = !showPassword">
+          <span x-text="showPassword ? 'Hide' : 'Show'"></span>
+        </button>
       </div>
 
       <!-- confirm password -->
       <div class="form-field password">
         <label>
           <span>Confirm Password:</span>
-          <input type="password" x-model="passwordConfirm" />
+          <input
+            :type="showConfirmPassword ? 'text' : 'password'"
+            x-model="passwordConfirm"
+          />
         </label>
+        <button
+          type="button"
+          @click="showConfirmPassword = !showConfirmPassword"
+        >
+          <span x-text="showConfirmPassword ? 'Hide' : 'Show'"></span>
+        </button>
       </div>
 
       <!-- belt color -->
